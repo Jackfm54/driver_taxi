@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "20457524542",
+    "project_id": "uber-taxi-app-5e064",
+    "storage_bucket": "uber-taxi-app-5e064.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20457524542:android:4c39ee79153d5eb35f306f",
+        "android_client_info": {
+          "package_name": "com.example.driver_taxi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFYkuWxlgWweAwYoTsisMGVOTQ2du11ss"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
