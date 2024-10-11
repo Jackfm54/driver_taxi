@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/driver_taxi.iml" filepath="$PROJECT_DIR$/driver_taxi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/driver_taxi_android.iml" filepath="$PROJECT_DIR$/android/driver_taxi_android.iml" />
     </modules>
   </component>
 </project>
