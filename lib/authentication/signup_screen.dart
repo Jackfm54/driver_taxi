@@ -1,5 +1,6 @@
 import 'package:driver_taxi/authentication/car_info_screen.dart';
 import 'package:driver_taxi/authentication/login_screen.dart';
+import 'package:driver_taxi/widgets/progress_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -25,7 +26,7 @@ class _SignUpScreenState extends State<SignUpScreen>
       Fluttertoast.showToast(msg: "Remplissez le champ nom svp.");
     }
 
-    else if (emailTextEditingController.text.contains("@")){
+    else if (!emailTextEditingController.text.contains("@")){
       Fluttertoast.showToast(msg: "Ajoutez un courriel valide svp .");
       }
 
@@ -35,6 +36,16 @@ class _SignUpScreenState extends State<SignUpScreen>
 
     else if (passwordTextEditingController.text.length < 6){
       Fluttertoast.showToast(msg: "Le mot de passe doit contenir plus que 6 caracteres ");
+    }
+
+    else {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext c){
+          return progressDialog(message: "Processing, please wait ...",);
+        }
+      );
     }
   }
 
