@@ -1,6 +1,7 @@
 import 'package:driver_taxi/authentication/car_info_screen.dart';
 import 'package:driver_taxi/authentication/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 class SignUpScreen extends StatefulWidget
@@ -16,6 +17,26 @@ class _SignUpScreenState extends State<SignUpScreen>
   TextEditingController phoneTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
 
+
+
+  validateForm()
+  {
+    if (nameTextEditingController.text.length < 3){
+      Fluttertoast.showToast(msg: "Remplissez le champ nom svp.");
+    }
+
+    else if (emailTextEditingController.text.contains("@")){
+      Fluttertoast.showToast(msg: "Ajoutez un courriel valide svp .");
+      }
+
+    else if (phoneTextEditingController.text.isEmpty){
+      Fluttertoast.showToast(msg: "Le numéro de téléphone est obligatoire .");
+    }
+
+    else if (passwordTextEditingController.text.length < 6){
+      Fluttertoast.showToast(msg: "Le mot de passe doit contenir plus que 6 caracteres ");
+    }
+  }
 
 
   @override
@@ -151,7 +172,8 @@ class _SignUpScreenState extends State<SignUpScreen>
               ElevatedButton(
                 onPressed: ()
                 {
-                  Navigator.push(context, MaterialPageRoute(builder: (c) => CarInfoScreen()));
+                  validateForm();
+
                 },
                 style: ElevatedButton.styleFrom(
                    backgroundColor: Colors.lightGreenAccent
